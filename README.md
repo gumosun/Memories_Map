@@ -1,9 +1,9 @@
 # memories_map
 
 ### Wireframes
-!(https://github.com/gumosun/memories_map/blob/master/wireframes/wireframe_mobile.png)
-!(https://github.com/gumosun/memories_map/blob/master/wireframes/wireframe_desktop0.png)
-!(https://github.com/gumosun/memories_map/blob/master/wireframes/wireframe_desktop1.png)
+![mobile](https://github.com/gumosun/memories_map/blob/master/wireframes/wireframe_mobile.png)
+![desktop](https://github.com/gumosun/memories_map/blob/master/wireframes/wireframe_desktop0.png)
+![desktop](https://github.com/gumosun/memories_map/blob/master/wireframes/wireframe_desktop1.png)
 
 ### User Stories
 Mobile: 
