@@ -23,6 +23,7 @@ Destop:
 2. 9/14 ~ 9/16 - React Native mobile app
 3. 9/17 ~ 9/18 - Desktop version
 4. 9/19 - Styling Apps
+![timeline](https://github.com/gumosun/memories_map/blob/master/wireframes/Timeline.png)
 
 ### Tech Stack
 * HTML
