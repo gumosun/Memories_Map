@@ -1,8 +1,9 @@
 # memories_map
 
 ### Wireframes
-
-
+!(/wireframes/wireframe_mobile.png)
+!(/wireframes/wireframe_desktop0.png)
+!(/wireframes/wireframe_desktop1.png)
 
 ### User Stories
 Mobile: 
@@ -16,8 +17,6 @@ Destop:
 2. Users can do CRUD via browser (MVP)
 3. Users can make comments on memories (MVP)
 4. Users has to log-in (Version 2)
-
-
 
 ### Timeline
 1. 9/13 - React Native research and maybe create hello word app on my iphone
