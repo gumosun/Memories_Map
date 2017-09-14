@@ -29,7 +29,7 @@ app.listen(PORT, () => {
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'client','public', 'index.html'));
 });
 
 const memoryRoutes = require('./routes/memory-routes');
