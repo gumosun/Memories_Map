@@ -2,23 +2,114 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+header {
+  height: 22vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background:#07C1BB;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+ font-family: 'Indie Flower', cursive;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.logo {
+  font-size: 6.5vh;
+  margin: 5px 15px 5px 15px;
 }
 
-.App-intro {
-  font-size: large;
+footer {
+  background:#07C1BB;
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-family: 'Indie Flower', cursive;
+  font-size:2.5vh;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+header ul {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+header li {
+  margin: 5px 30px;
+  font-size:3.1vh;
+  text-decoration: none;
+  border: 2px solid black;
+  padding: 9px;
+}
+
+.addform {
+  display: flex;
+  flex-direction: column;
+}
+
+.styleform {
+  width: 50%;
+  font-family: 'Indie Flower', cursive;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 40px;
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 3px solid black;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  margin: 30px auto;
+}
+
+.input-group {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+input[type="submit"] {
+  margin: 46px 0 16px;
+  background-color: #07C1BB;
+  color: black;
+  align-self: flex-end;
+  padding: 12px 20px;
+  border-bottom: 3px solid #111;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  width:15%;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)
+}
+
+input {
+  padding: 8px 1px;
+  border: 0px solid transparent;
+  border-bottom: 1px solid #111;
+  font-size: 1em;
+  outline: 0px solid transparent;
+  margin: 40px 0;
+  width: 90%;
+}
+
+
+
+
+.addtitle {
+  font-size:5vh;
+  margin: 5px auto;
 }

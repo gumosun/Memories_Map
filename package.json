@@ -6,12 +6,20 @@
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "express-session": "^1.15.5",
+    "google-map-react": "^0.24.0",
+    "google-maps-react": "^1.1.0",
+    "leaflet": "^1.2.0",
+    "method-override": "^2.3.9",
     "morgan": "^1.8.2",
-    "pg-promise": "^6.5.4"
+    "pg-promise": "^6.5.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-google-maps": "^8.0.0",
+    "react-leaflet": "^1.6.6"
   },
   "scripts": {
-  "start": "node app.js",
-  "dev": "nodemon app.js",
-  "debugger": "DEBUG=*:* npm run dev"
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "debugger": "DEBUG=*:* npm run dev"
   }
 }

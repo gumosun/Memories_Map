@@ -1,6 +1,7 @@
 const express = require('express');
 const logger = require('morgan');
 const path = require('path');
+const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
@@ -10,7 +11,7 @@ require('dotenv').config();
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   session({
@@ -23,7 +24,7 @@ app.use(
 
 app.use(express.static('public'));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
