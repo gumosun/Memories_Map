@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import AddNew from './components/AddNew';
+import MemoryInfo from './components/MemoryInfo'
 
 class App extends Component {
   constructor (){
@@ -30,7 +31,10 @@ this.setPage = this.setPage.bind(this);
       case 'add':
         return <AddNew/>;
         break;  
-      default:
+      case 'memory':
+        return <MemoryInfo/>;
+        break;    
+      default: 
         break;
     }
   }

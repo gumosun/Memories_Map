@@ -16,4 +16,19 @@ Memory.create = memory => {
   );
 };
 
+Memory.findAll = () => {
+  return db.query(
+    `SELECT * FROM memories`
+  );
+};
+
+Memory.findById = (id) => {
+  return db.oneOrNone(
+    `
+    SELECT * FROM memories
+    WHERE id = $1`, 
+    [id]
+  );
+};
+
 module.exports = Memory;

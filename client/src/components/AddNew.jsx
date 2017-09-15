@@ -6,8 +6,8 @@ class AddNew extends Component{
     constructor(){
         super()
         this.state = {
-            title:null,
-            description:null
+            title:'',
+            description:''
         }
      this.titleUpdate = this.titleUpdate.bind(this);  
      this.addNewSubmit = this.addNewSubmit.bind(this); 
@@ -47,8 +47,8 @@ class AddNew extends Component{
             <div className='styleform'>
             <div className='addtitle'>Add New Memory</div>
             <form onSubmit={(e) => this.addNewSubmit()}>
-                <input type='text' className='input-group' value={this.state.title} onChange={this.contentUpdate} placeholder='title'/>
-                <input className='input-group' value={this.state.description} onChange={this.contentUpdate} placeholder='description'/>
+                <input type='text' className='input-group' value={this.state.title} onChange={this.titleUpdate} placeholder='title'/>
+                <input className='input-group' value={this.state.description} onChange={this.descriptionUpdate} placeholder='description'/>
                 <input type='submit' className='input-group' value='Add New'/>
             </form>
             </div>
