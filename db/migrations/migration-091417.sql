@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS memories (
 
 CREATE TABLE if NOT EXISTS comments (
   id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
   comment VARCHAR(255),
   memory_id INT REFERENCES memories(id)
 );

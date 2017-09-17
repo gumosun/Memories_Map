@@ -5,16 +5,56 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import AddNew from './components/AddNew';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+import axios from 'axios'
 import MemoryInfo from './components/MemoryInfo'
+
 
 class App extends Component {
   constructor (){
   super();  
   this.state = {
   currentPage: 'home',
+  apiLoaded: false,
+  memories:[],
+  detailmemory:[],
+  id:null
 }
 this.setPage = this.setPage.bind(this);
+this.handleClick=this.handleClick.bind(this);
+this.selectEditedMemory=this.selectEditedMemory.bind(this);
+this.resetMemories=this.resetMemories.bind(this);
   }
+componentDidMount(){
+     axios.get(`/memories/all`, {
+     }).then(res => {
+         console.log('we are back to react')
+       this.setState({
+           memories:res.data.data
+       })
+     }).catch(err => console.log(err));
+    }
+
+handleClick() {
+    console.log(this.state.id)
+    console.log('this is click')
+        axios.get(`/memories/all/${this.state.id}`, {
+            id: this.state.currentMemory
+        })
+    .then(res => {
+    this.setState({
+           detailmemory:res.data.data,
+           apiLoaded:true,
+           currentPage:'single' 
+       })
+        console.log(this.state.apiLoaded)
+        console.log(this.state.detailmemory)
+     }).catch(err => console.log(err));
+    }
 
  setPage(page) {
     console.log('click');
@@ -23,23 +63,41 @@ this.setPage = this.setPage.bind(this);
     })
   }
 
+  selectEditedMemory(id) {
+    console.log('hi')
+    console.log(id)
+    this.setState({id: id}, this.handleClick)
+  } 
+
  decideWhichPage() {
     switch(this.state.currentPage) {
       case 'home':
-        return <Home/>;
-        break;
+        return <Home 
+                memories={this.state.memories}
+                apiLoaded={this.state.apiLoaded}
+                selectEditedMemory={this.selectEditedMemory}/>
       case 'add':
         return <AddNew/>;
-        break;  
-      case 'memory':
-        return <MemoryInfo/>;
-        break;    
+        break;   
+      case 'single':
+        return <MemoryInfo memory={this.state.detailmemory} resetMemories={this.resetMemories} />;
+        break;   
       default: 
         break;
     }
   }
 
-  
+  resetMemories() {
+    axios.get(`/memories/all`, {
+     }).then(res => {
+         console.log('this is resset')
+       this.setState({
+           memories:res.data.data,
+           setPage:'home'
+            })
+     }).catch(err => console.log(err));
+   
+  }
 
   render() {
     return (

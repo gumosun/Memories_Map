@@ -46,6 +46,68 @@ memoryController.show = (req, res) => {
     });
 }
 
+memoryController.getComment = (req, res) => {
+  Memory.getAllComment(req.params.id)
+  .then(comment => {
+    res.json({
+      data:comment,
+    });
+  }).catch(err =>{
+    console.log(err);
+    res.status(500).json({err: err});
+  });
+}
+
+memoryController.addComment = (req, res) => {
+  Memory.createNewComment({
+    name:req.body.name,
+    comment:req.body.comment,
+    memory_id:req.body.id
+  }).then(memories => {
+      console.log(memories);
+      res.json({
+        message: 'ok',
+        data: comment,
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ err });
+    });
+}
+
+memoryController.delete = (req,res) => {
+  Memory.deleteMemory(req.params.id)
+  .then(memory => {
+    res.json({
+      message:'ok',
+    });
+  }).catch(err =>{
+    console.log(err);
+    res.status(500).json({err: err});
+  });
+}
+
+memoryController.update = (req, res) => {
+  Memory.update(
+    {
+      title: req.body.title,
+      description: req.body.description,
+      id: req.body.id
+    },
+  )
+    .then(memory => {
+      res.json({
+        message: 'ok',
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ err });
+    });
+}
+
+
 
 
 module.exports = memoryController;
