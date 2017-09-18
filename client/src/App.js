@@ -12,6 +12,7 @@ import {
 } from 'react-router-dom';
 import axios from 'axios'
 import MemoryInfo from './components/MemoryInfo'
+import GeoLocation from './components/GeoLocation'
 
 
 class App extends Component {
@@ -77,7 +78,7 @@ handleClick() {
                 apiLoaded={this.state.apiLoaded}
                 selectEditedMemory={this.selectEditedMemory}/>
       case 'add':
-        return <AddNew/>;
+        return <GeoLocation/>;
         break;   
       case 'single':
         return <MemoryInfo memory={this.state.detailmemory} resetMemories={this.resetMemories} currentPage='single'/>;

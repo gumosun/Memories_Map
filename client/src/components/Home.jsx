@@ -17,7 +17,7 @@ renderMemories(){
          
 render(){   
   return (
-      <div className="singlememory">
+      <div className="allmemory">
       {this.renderMemories()}
       </div> 
   )

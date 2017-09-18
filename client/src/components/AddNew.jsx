@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import GeoLocation from './GeoLocation'
 
 
 class AddNew extends Component{
@@ -7,10 +8,10 @@ class AddNew extends Component{
         super()
         this.state = {
             title:'',
-            description:''
+            description:'',
         }
-     this.titleUpdate = this.titleUpdate.bind(this);  
-     this.addNewSubmit = this.addNewSubmit.bind(this); 
+    this.titleUpdate = this.titleUpdate.bind(this);  
+    this.addNewSubmit = this.addNewSubmit.bind(this); 
     this.descriptionUpdate = this.descriptionUpdate.bind(this); 
     }
 
@@ -18,13 +19,24 @@ class AddNew extends Component{
     addNewSubmit() {
       axios.post('/memories/add', {
       title: this.state.title,
-      description: this.state.description
+      description: this.state.description,
+      latitude:this.props.latitude,
+      longitude:this.props.longitude
     }).then(res => {
       this.setState({
       currentPage: 'home',
     })
     }).catch(err => console.log(err));
   }
+
+//     componentDidMount() {
+//        const script = document.createElement("script");
+//        const locationTest= document.getElementById('demo');
+
+//        script.src = "./main.js";
+//        script.async = true;
+//        locationTest.appendChild(script);
+//    }
 
   // update the input content
     titleUpdate(e) {
@@ -41,11 +53,29 @@ class AddNew extends Component{
     console.log(this.state.description);
     }
 
+    showData(){
+        console.log("latitude is:" + this.props.latitude)
+    }
+
+    // getLocation(){
+    // var x = document.getElementById("demo");
+    // if (navigator.geolocation) {
+    //     navigator.geolocation.getCurrentPosition(this.showPosition) 
+    // } else {
+    //     x.innerHTML = "Geolocation is not supported by this browser.";
+    // }
+    // }
+
+    // showPosition(position) {
+    //   console.log('this is position' + position)
+    // }
+
     render(){
     return( 
             <div>
             <div className='styleform'>
             <div className='addtitle'>Add New Memory</div>
+            {this.showData()}
             <form onSubmit={(e) => this.addNewSubmit()}>
                 <input type='text' className='input-group' value={this.state.title} onChange={this.titleUpdate} placeholder='title'/>
                 <input className='input-group' value={this.state.description} onChange={this.descriptionUpdate} placeholder='description'/>

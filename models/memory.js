@@ -8,11 +8,11 @@ Memory.create = memory => {
   return db.one(
     `
     INSERT INTO memories
-    (title, description)
-    VALUES ($1, $2)
+    (title, description, latitude, longitude)
+    VALUES ($1, $2, $3, $4)
     RETURNING *
   `,
-    [ memory.title,memory.description]
+    [ memory.title, memory.description, memory.latitude, memory.longitude]
   );
 };
 

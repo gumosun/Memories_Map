@@ -6,7 +6,9 @@ memoryController.create = (req, res) => {
 console.log(req.body.title + req.body.description);
 Memory.create({
     title:req.body.title,
-    description:req.body.description
+    description:req.body.description,
+    latitude:req.body.latitude,
+    longitude:req.body.longitude
   })
     .then(memories => {
       console.log(memories);

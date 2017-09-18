@@ -3,7 +3,9 @@
 CREATE TABLE IF NOT EXISTS memories (
   id SERIAL PRIMARY KEY,
   title VARCHAR(255),
-  description TEXT
+  description TEXT,
+  latitude NUMERIC,
+  longitude NUMERIC
 );
 
 CREATE TABLE if NOT EXISTS comments (
