@@ -40,7 +40,7 @@ Memory.findById = id => {
   );
 }
 
-Memory.createNewComment = comment => {
+Memory.createNewComment = (comment,id) => {
   return db.one(
     `
     INSERT INTO comments
@@ -48,7 +48,7 @@ Memory.createNewComment = comment => {
     VALUES ($1, $2, $3)
     RETURNING *
   `,
-    [comment.name, comment.comment, comment.memory_id]
+    [comment.name, comment.comment, id]
   );
 };
 
@@ -62,16 +62,16 @@ Memory.deleteMemory = id => {
   );
 };
 
-Memory.update = memory => {
+Memory.update = (memory,id) => {
   return db.one(
     `
     UPDATE memories SET
-    (title, description)
-    VALUES ($1, $2)
+    title = $1,
+    description = $2
     WHERE id = $3
     RETURNING *
   `,
-    [memory.title, memory.description, memory.id]//these are place holders
+    [memory.title, memory.description, id]
   );
 };
 

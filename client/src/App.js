@@ -80,7 +80,7 @@ handleClick() {
         return <AddNew/>;
         break;   
       case 'single':
-        return <MemoryInfo memory={this.state.detailmemory} resetMemories={this.resetMemories} />;
+        return <MemoryInfo memory={this.state.detailmemory} resetMemories={this.resetMemories} currentPage='single'/>;
         break;   
       default: 
         break;
@@ -93,7 +93,7 @@ handleClick() {
          console.log('this is resset')
        this.setState({
            memories:res.data.data,
-           setPage:'home'
+           currentPage:'home'
             })
      }).catch(err => console.log(err));
    

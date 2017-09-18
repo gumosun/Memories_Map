@@ -62,12 +62,11 @@ memoryController.addComment = (req, res) => {
   Memory.createNewComment({
     name:req.body.name,
     comment:req.body.comment,
-    memory_id:req.body.id
-  }).then(memories => {
-      console.log(memories);
+  },req.params.id).then(comment => {
+     console.log(comment)
       res.json({
         message: 'ok',
-        data: comment,
+        data:comment
       });
     })
     .catch(err => {
@@ -93,9 +92,7 @@ memoryController.update = (req, res) => {
     {
       title: req.body.title,
       description: req.body.description,
-      id: req.body.id
-    },
-  )
+    }, req.params.id,)
     .then(memory => {
       res.json({
         message: 'ok',

@@ -7,7 +7,13 @@ class Comment extends Component{
         this.state = {
             comment: null,
             name:null,
-            allcomment:[]
+            allcomment:[],
+            newOneId:null,
+            newOneName:'',
+            newOneComment:'',
+            newOneMemory_id:null,
+            input:'Leave your comment here',
+            yourName:'Your Name'
         }
      this.nameUpdate = this.nameUpdate.bind(this);
      this.commentUpdate = this.commentUpdate.bind(this);    
@@ -29,17 +35,29 @@ componentDidMount(){
     }
 
 // when a new topic is posting, link to backend to add data in posts table
-    handleCommentSubmit() {
+    handleCommentSubmit(e) {
+      e.preventDefault()
       console.log('this is click')  
       axios.post(`/memories/all/${this.props.id}/comment`, {
-      id: this.props.id,
       name: this.state.name,
       comment:this.state.comment
     }).then(res => {
-        this.renderCurrentTopics()
+     this.setState({
+         newOneId:res.data.data.id,
+         newOneName:res.data.data.name,
+         newOneComment:res.data.data.comment,
+         newOneMemory_id:res.data.data.memory_id,
+         input:'Leave your comment here',
+         yourName:'Your Name'
+     },this.resetData) 
     }).catch(err => console.log(err));
   }
-
+    
+    resetData(){
+    console.log(this.state.newOneId + this.state.newOneName)
+    this.state.allcomment.push({id:this.state.newOneId, name:this.state.newOneName, comment:this.state.newOneComment, memory_id:this.state.newOneMemory_id}) 
+    this.forceUpdate()
+    }
   // update the input content
     nameUpdate(e) {
     this.setState({
@@ -66,9 +84,9 @@ componentDidMount(){
     render(){
     return( <div classNmae='forumall'> 
              <div classNmae='postnewtopic'>
-            <form  onSubmit={(e) => this.handleCommentSubmit()}>
-             <div><input className='commentName'type='text' value={this.state.name} onChange={this.nameUpdate} placeholder='Your name'/></div>
-             <div><textarea value={this.state.comment} onChange={this.commentUpdate} placeholder='Leave comment here!'/></div>
+            <form  onSubmit={(e) => this.handleCommentSubmit(e)}>
+             <div><input className='commentName'type='text' value={this.state.name} onChange={this.nameUpdate} placeholder={this.state.yourName}/></div>
+             <div><textarea value={this.state.comment} onChange={this.commentUpdate} placeholder={this.state.input}/></div>
              <div className='commentSubmit'> <input type='submit' name='Comment'/></div>
             </form>
             </div>

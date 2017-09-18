@@ -5,8 +5,8 @@ class EditForm extends React.Component {
     constructor(){
         super()
         this.state = {
-            newTitle:null,
-            newDescription:null,
+            newTitle: "",
+            newDescription: ""
         }
      this.titleUpdate = this.titleUpdate.bind(this);  
      this.editSubmit = this.editSubmit.bind(this); 
@@ -17,11 +17,10 @@ class EditForm extends React.Component {
       axios.put(`/memories/all/${this.props.id}`, {
       title: this.state.newTitle,
       description: this.state.newDescription,
-      id:this.props.id
     }).then(res => {
       this.setState({
-      currentPage: 'home',
-    }, this.resetMemories)
+      currentPage: '',
+    }, this.props.resetMemories)
     }).catch(err => console.log(err));
   }
   
