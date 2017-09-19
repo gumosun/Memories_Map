@@ -53,7 +53,7 @@ renderMaker(){
     return (
       <Gmaps
         width={'100%'}
-        height={'600px'}
+        height={'100%'}
         lat={40.73}
         lng={ -73.989}
         zoom={13}
