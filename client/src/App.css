@@ -164,13 +164,6 @@ input[type="submit"]:hover {
   font-family: 'Boogaloo', cursive;
 }
 
-
-.map {
-  width:100%;
-  min-height: 400px;
-  border:1px solid grey;
-}
-
 .singlememory {
   text-align: left;
   font-family: 'Boogaloo', cursive;
@@ -235,5 +228,14 @@ input[type="submit"]:hover {
 }
 
 .allmemory {
-  padding:10px;
+  padding:0px 25px 0px 25px;
+}
+
+#gmaps {
+  margin: 20px auto;
+  border: 2px solid #07C1BB;
+  width:90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

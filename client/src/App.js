@@ -101,7 +101,6 @@ handleClick() {
     return (
       <div className="App">
         <Header setPage={this.setPage} />
-        <div id='gmaps'><GMap memories={this.state.memories}/></div>
         {this.decideWhichPage()}
         <Footer />
       </div>

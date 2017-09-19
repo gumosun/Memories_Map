@@ -3,6 +3,7 @@ import { Component } from 'react';
 import axios from 'axios';
 import MemoryList from './MemoryList'
 import MemoryInfo from './MemoryInfo'
+import GMap from './Map'
 
 class Home extends Component {
      constructor(){
@@ -18,8 +19,8 @@ renderMemories(){
 render(){   
   return (
       <div className='content'>
-      <div className="allmemory">    
-      
+      <div id='gmaps'><GMap memories={this.props.memories}/></div>    
+      <div className="allmemory">
       {this.renderMemories()}
       </div> 
       </div>

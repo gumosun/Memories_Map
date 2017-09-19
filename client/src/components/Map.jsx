@@ -18,8 +18,6 @@ class GMap extends React.Component {
       }
   }  
   
-  
-
   onMapCreated(map) {
     map.setOptions({
       disableDefaultUI: true
@@ -44,11 +42,17 @@ renderMaker(){
           return (<Marker lat={memory.latitude} lng={memory.longitude}/>)
       })
   }
+ 
+ renderInfo(){
+      return this.props.memories.map(memory=>{
+          return (<InfoWindow lat={memory.latitude} lng={memory.longitude} content={memory.title}/>)
+      })
+  } 
 
   render() {
     return (
       <Gmaps
-        width={'65%'}
+        width={'100%'}
         height={'600px'}
         lat={40.73}
         lng={ -73.989}
@@ -57,6 +61,7 @@ renderMaker(){
         params={params}
         onMapCreated={this.onMapCreated}>
       {this.renderMaker()}
+      {this.renderInfo()}
       </Gmaps>
     );
   }
