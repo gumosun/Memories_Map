@@ -5,14 +5,11 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import AddNew from './components/AddNew';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom';
 import axios from 'axios'
 import MemoryInfo from './components/MemoryInfo'
 import GeoLocation from './components/GeoLocation'
+import GMap from './components/Map'
+
 
 
 class App extends Component {
@@ -104,6 +101,7 @@ handleClick() {
     return (
       <div className="App">
         <Header setPage={this.setPage} />
+        <div id='gmaps'><GMap memories={this.state.memories}/></div>
         {this.decideWhichPage()}
         <Footer />
       </div>
