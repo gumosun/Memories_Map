@@ -29,14 +29,6 @@ class AddNew extends Component{
     }).catch(err => console.log(err));
   }
 
-//     componentDidMount() {
-//        const script = document.createElement("script");
-//        const locationTest= document.getElementById('demo');
-
-//        script.src = "./main.js";
-//        script.async = true;
-//        locationTest.appendChild(script);
-//    }
 
   // update the input content
     titleUpdate(e) {
@@ -56,19 +48,6 @@ class AddNew extends Component{
     showData(){
         console.log("latitude is:" + this.props.latitude)
     }
-
-    // getLocation(){
-    // var x = document.getElementById("demo");
-    // if (navigator.geolocation) {
-    //     navigator.geolocation.getCurrentPosition(this.showPosition) 
-    // } else {
-    //     x.innerHTML = "Geolocation is not supported by this browser.";
-    // }
-    // }
-
-    // showPosition(position) {
-    //   console.log('this is position' + position)
-    // }
 
     render(){
     return( 

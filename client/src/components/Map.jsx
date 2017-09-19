@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
+import axios from 'axios'
 
 // const coords = {
 //   lat: 51.5258541,
@@ -14,7 +15,8 @@ class GMap extends React.Component {
       super()
       this.state = {
           lat:null,
-          lng:null
+          lng:null,
+          clickinfo:{}
       }
   }  
   
@@ -24,22 +26,24 @@ class GMap extends React.Component {
     });
   }
 
-  onDragEnd(e) {
-    console.log('onDragEnd', e);
-  }
 
-  onCloseClick() {
-    console.log('onCloseClick');
-  }
+//   onClick(id) {
+//      axios.get(`memories/all/${id}`)
+//   .then(res => {this.setState({
+//      clickinfo:res.data.data
+//   })
+//      }).catch(err => console.log(err));
+//   }
 
-  onClick(e) {
-    console.log('onClick', e);
-  }
-
+// renderInfoAgain(){
+//   console.log(this.state.clickinfo.latitude)
+//   return
+//   (<InfoWindow lat={this.state.clickinfo.latitude} lng={this.state.clickinfo.longitude} content={this.state.clickinfo.title}/>)
+// }
 
 renderMaker(){
       return this.props.memories.map(memory=>{
-          return (<Marker lat={memory.latitude} lng={memory.longitude}/>)
+          return (<Marker lat={memory.latitude} lng={memory.longitude} />)
       })
   }
  
@@ -62,6 +66,7 @@ renderMaker(){
         onMapCreated={this.onMapCreated}>
       {this.renderMaker()}
       {this.renderInfo()}
+      {this.renderInfoAgain()}
       </Gmaps>
     );
   }

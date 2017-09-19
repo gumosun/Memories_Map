@@ -34,7 +34,7 @@ componentDidMount(){
      }).catch(err => console.log(err));
     }
 
-// when a new topic is posting, link to backend to add data in posts table
+// when a new comment is posting, link to backend to add data in posts table
     handleCommentSubmit(e) {
       e.preventDefault()
       console.log('this is click')  
@@ -52,7 +52,8 @@ componentDidMount(){
      },this.resetData) 
     }).catch(err => console.log(err));
   }
-    
+
+  // reset the comment array wiht the new input to render the new comment out
     resetData(){
     console.log(this.state.newOneId + this.state.newOneName)
     this.state.allcomment.push({id:this.state.newOneId, name:this.state.newOneName, comment:this.state.newOneComment, memory_id:this.state.newOneMemory_id}) 
