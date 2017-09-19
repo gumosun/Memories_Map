@@ -12,7 +12,7 @@ header {
   color: black;
   font-weight: bold;
   padding: 10px;
- font-family: 'Indie Flower', cursive;
+ font-family: 'Montserrat', sans-serif; 
 }
 
 .logo {
@@ -27,7 +27,7 @@ footer {
   align-items: center;
   justify-content: center;
   color: black;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Montserrat', sans-serif;
   font-size:2.5vh;
 }
 
@@ -42,11 +42,11 @@ header ul {
 
 header li {
   margin: 5px 30px;
-  font-size:3.1vh;
+  font-size:2.8vh;
   text-decoration: none;
   border: 2px solid black;
-  padding: 5px;
-  font-family: 'Boogaloo', cursive;
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
   min-width: 40%;
 }
 
@@ -62,7 +62,7 @@ header li:hover {
 
 .styleform {
   width: 80%;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Montserrat', sans-serif;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
@@ -143,7 +143,7 @@ input[type="submit"]:hover {
   font-size:6.5vh;
   margin: 5px auto;
   color: #222277;
-  font-family: 'Righteous', cursive;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .home {
@@ -233,9 +233,10 @@ input[type="submit"]:hover {
 
 #gmaps {
   margin: 20px auto;
-  border: 2px solid #07C1BB;
+  border: 5px solid #07C1BB;
   width:90%;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
 }
