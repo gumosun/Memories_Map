@@ -176,6 +176,10 @@ input[type="submit"]:hover {
   font-family: 'Boogaloo', cursive;
 }
 
+.singlememory h2{
+  font-size:4.5vh;
+}
+
 .singlememory p {
   color:#2255BB;
   font-size:3.2vh;

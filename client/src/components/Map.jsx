@@ -1,44 +1,66 @@
-var React = require('react');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
 
-var Map = React.createClass({
+// const coords = {
+//   lat: 51.5258541,
+//   lng: -0.08040660000006028
+// };
 
-    componentDidMount(){ 
-        this.componentDidUpdate();
-    },
+const params = {v: '3.exp', key:'AIzaSyACXNdBHY2QU0ZTvGnHnNphAFZwM8GbZUE'};
 
-    componentDidUpdate(){
+class GMap extends React.Component {
+  constructor(){
+      super()
+      this.state = {
+          lat:null,
+          lng:null
+      }
+  }  
+  
+  
 
-        if(this.lastLat == this.props.lat && this.lastLng == this.props.lng){
-            return;
-        }
+  onMapCreated(map) {
+    map.setOptions({
+      disableDefaultUI: true
+    });
+  }
 
-        this.lastLat = this.props.lat;
-        this.lastLng = this.props.lng
+  onDragEnd(e) {
+    console.log('onDragEnd', e);
+  }
 
-        var map = new GMaps({
-            el: '#map',
-            lat: this.props.lat,
-            lng: this.props.lng
-        });
+  onCloseClick() {
+    console.log('onCloseClick');
+  }
 
-        // Adding a marker to the location we are showing
+  onClick(e) {
+    console.log('onClick', e);
+  }
 
-        map.addMarker({
-            lat: this.props.lat,
-            lng: this.props.lng
-        });
-    },
 
-    render(){
+renderMaker(){
+      return this.props.memories.map(memory=>{
+          return (<Marker lat={memory.latitude} lng={memory.longitude}/>)
+      })
+  }
 
-        return (
-            <div className="map-holder">
-                <p>Loading...</p>
-                <div id="map"></div>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <Gmaps
+        width={'65%'}
+        height={'600px'}
+        lat={40.73}
+        lng={ -73.989}
+        zoom={13}
+        loadingMessage={'Loading Map.....'}
+        params={params}
+        onMapCreated={this.onMapCreated}>
+      {this.renderMaker()}
+      </Gmaps>
+    );
+  }
 
-});
+};
 
-module.exports = Map;
+export default GMap;

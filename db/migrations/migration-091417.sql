@@ -1,4 +1,4 @@
--- \c memories_dev;
+\c memories_dev;
 
 CREATE TABLE IF NOT EXISTS memories (
   id SERIAL PRIMARY KEY,
