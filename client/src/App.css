@@ -158,17 +158,6 @@ input[type="submit"]:hover {
  align-items: center;
 }
 
-.allmemories {
-  background-color: #FFF;
-  width: 100%;
-  margin: 0px;
-  padding: 0px 20px 0px 0px;
-  text-align: left;
-  overflow: scroll;
-  height: 470px;
-  font-family: 'Boogaloo', cursive;
-}
-
 .singlememory {
   text-align: left;
   font-family: 'Boogaloo', cursive;
@@ -233,7 +222,11 @@ input[type="submit"]:hover {
 }
 
 .allmemory {
-  padding:0px 25px 0px 25px;
+  padding:0px 5px 0px 5px;
+  height: 420px;
+  text-align: left;
+  overflow: scroll;
+  font-family: 'Boogaloo', cursive;
 }
 
 #gmaps {
@@ -272,9 +265,14 @@ header li {
 } 
 
 .content {
+  width:100%;
   display: flex;
   flex-direction: row;
   justify-content: left;
   padding:10px;
 }
+.allmemory {
+  width:34%;
+}
+
 }

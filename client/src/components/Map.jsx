@@ -66,7 +66,6 @@ renderMaker(){
         onMapCreated={this.onMapCreated}>
       {this.renderMaker()}
       {this.renderInfo()}
-      {this.renderInfoAgain()}
       </Gmaps>
     );
   }
