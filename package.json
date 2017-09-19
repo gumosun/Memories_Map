@@ -1,4 +1,9 @@
-{
+{ "name": "memory_map",
+  "version": "1.0.0",
+  "engines": {
+    "node": "8.1.2",
+    "npm": "5.0.4"
+  },
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.18.1",
