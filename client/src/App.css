@@ -13,7 +13,7 @@ header {
   color: black;
   font-weight: bold;
   padding: 10px;
-  font-family: 'Montserrat', sans-serif; 
+  font-family: 'Imprima', sans-serif;
 }
 
 .logo {
@@ -85,7 +85,7 @@ header li:hover {
 
 .showform {
   width: 80%;
-  font-family: 'Boogaloo', cursive;
+  font-family: 'Imprima', sans-serif;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
@@ -160,7 +160,7 @@ input[type="submit"]:hover {
 
 .singlememory {
   text-align: left;
-  font-family: 'Boogaloo', cursive;
+  font-family: 'Imprima', sans-serif;
 }
 
 .singlememory h2{
@@ -217,7 +217,7 @@ input[type="submit"]:hover {
 
 .currenttopics {
   margin:15px auto;
-  color:#07A1DD;
+  color:#0581BB;
   font-size: 2.8vh;
 }
 
@@ -226,7 +226,7 @@ input[type="submit"]:hover {
   height: 420px;
   text-align: left;
   overflow: scroll;
-  font-family: 'Boogaloo', cursive;
+  font-family: 'Imprima', sans-serif;
 }
 
 #gmaps {
@@ -273,7 +273,21 @@ header li {
 }
 .allmemory {
   width:34%;
-  padding: 0px 10px 0px 15px;
+  padding: 0px 30px 0px 15px;
+  height: 600px;
+}
+.singlememory h2{
+  font-size: 3.9vh;
+}
+
+.singlememory p {
+  color:#2255BB;
+  font-size: 2.5vh;
+  border-bottom: thin solid grey;
+}
+
+header ul {
+  margin: auto 20px auto 0px;
 }
 
 }
