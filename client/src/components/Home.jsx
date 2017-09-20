@@ -19,7 +19,7 @@ renderMemories(){
 render(){   
   return (
       <div className='content'>
-      <div id='gmaps'><GMap memories={this.props.memories}/></div>    
+      <div id='gmaps'><GMap memories={this.props.memories} selectEditedMemory={this.props.selectEditedMemory}/></div>    
       <div className="allmemory">
       {this.renderMemories()}
       </div> 

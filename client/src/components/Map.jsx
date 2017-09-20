@@ -27,13 +27,14 @@ class GMap extends React.Component {
   }
 
 
-//   onClick(id) {
-//      axios.get(`memories/all/${id}`)
-//   .then(res => {this.setState({
-//      clickinfo:res.data.data
-//   })
-//      }).catch(err => console.log(err));
-//   }
+  onClick(id) {
+     axios.get(`memories/all/${id}`)
+  .then(res => {this.setState({
+     clickinfo:res.data.data,
+     currentPage:'single' 
+  })
+     }).catch(err => console.log(err));
+  }
 
 // renderInfoAgain(){
 //   console.log(this.state.clickinfo.latitude)
@@ -43,7 +44,7 @@ class GMap extends React.Component {
 
 renderMaker(){
       return this.props.memories.map(memory=>{
-          return (<Marker lat={memory.latitude} lng={memory.longitude} />)
+          return (<Marker lat={memory.latitude} lng={memory.longitude} onClick={() => this.props.selectEditedMemory(memory.id)}/>)
       })
   }
  
@@ -60,10 +61,11 @@ renderMaker(){
         height={'100%'}
         lat={40.73}
         lng={ -73.989}
-        zoom={13}
+        zoom={14}
         loadingMessage={'Loading Map.....'}
         params={params}
-        onMapCreated={this.onMapCreated}>
+        onMapCreated={this.onMapCreated}
+        >
       {this.renderMaker()}
       {this.renderInfo()}
       </Gmaps>

@@ -222,7 +222,7 @@ input[type="submit"]:hover {
 }
 
 .allmemory {
-  padding:0px 5px 0px 5px;
+  padding:0px 15px 0px 15px;
   height: 420px;
   text-align: left;
   overflow: scroll;

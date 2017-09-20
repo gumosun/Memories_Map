@@ -40,9 +40,7 @@ componentDidMount(){
 handleClick() {
     console.log(this.state.id)
     console.log('this is click')
-        axios.get(`/memories/all/${this.state.id}`, {
-            id: this.state.currentMemory
-        })
+        axios.get(`/memories/all/${this.state.id}`)
     .then(res => {
     this.setState({
            detailmemory:res.data.data,
@@ -73,7 +71,8 @@ handleClick() {
         return <Home 
                 memories={this.state.memories}
                 apiLoaded={this.state.apiLoaded}
-                selectEditedMemory={this.selectEditedMemory}/>
+                selectEditedMemory={this.selectEditedMemory}
+                />
       case 'add':
         return <GeoLocation/>;
         break;   
